@@ -15,9 +15,10 @@ library(readxl)
 library(haven)
 library(janitor)
 
-#loading data
+#loading data, tidying
 pups_data <- read_csv("./FAS_pups.csv") %>% 
-  clean_names()
+  clean_names() %>%
+  mutate(sex = recode(sex, `1` = "male", `2` = "female"))
 
 #gathering variables and omitting blank observations
 
