@@ -7,7 +7,7 @@ output: html_document
 Feben Asefaha (fta2112) is the lead for Problem 1, and Nadiya Pavlishyn (np2547) is the collaborator.
 
 ###Problem 1
-```{r load libraries and data, include=FALSE}
+```{r load libraries and data}
 
 library(tidyverse)
 library(readr)
@@ -28,16 +28,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-```{r include=FALSE}
+```{r}
+#creating plot
+library(ggridges)
 
+#ridge plot to look across day differences in developemnt
+pups_plot = pups_data_tidy%>%
+  ggplot(aes(x = pd_outcome, y = pd_measure)) + geom_density_ridges(scale = .85, aes(fill = pd_measure), alpha = .4)
+
+pups_plot
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
