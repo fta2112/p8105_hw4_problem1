@@ -16,7 +16,7 @@ library(haven)
 library(janitor)
 
 #loading data
-pups_data <- read_csv("../data_import_examples-2/FAS_pups.csv") %>% 
+pups_data <- read_csv("./FAS_pups.csv") %>% 
   clean_names()
 
 #gathering variables and omitting blank observations
