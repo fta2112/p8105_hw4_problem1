@@ -4,7 +4,7 @@ author: "Feben Asefaha"
 date: "10/25/2017"
 output: html_document
 ---
-I (fta2112) am the lead for Problem 1, and Nadiya Pavlishyn (np2547) is my collaborator.
+Feben Asefaha (fta2112) is the lead for Problem 1, and Nadiya Pavlishyn (np2547) is the collaborator.
 
 ###Problem 1
 ```{r load libraries and data, include=FALSE}
@@ -15,29 +15,20 @@ library(readxl)
 library(haven)
 library(janitor)
 
-#hey Prem
-
+#loading data
 pups_data <- read_csv("../data_import_examples-2/FAS_pups.csv") %>% 
   clean_names()
 
-str(pups_data)
+#gathering variables and omitting blank observations
 
-names(pups_data)
-
-dim(pups_data)
+pups_data_tidy = gather(pups_data, key = pd_measure, value = pd_outcome, pd_ears:pd_walk) %>% filter(!is.na(pd_outcome))
 
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
 
-```{r tidy data, include=FALSE}
-
-#gathering variables
-
-pups_data_tidy = gather(pups_data, key = pd_measure, value = pd_outcome, pd_ears:pd_walk) %>% filter(!is.na(pd_outcome))
-
-#and omitting blank observations 
+```{r include=FALSE}
 
 ```
 
