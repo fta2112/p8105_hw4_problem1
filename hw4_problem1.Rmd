@@ -35,7 +35,9 @@ library(ggridges)
 
 #ridge plot to look across day differences in developemnt
 pups_plot = pups_data_tidy%>%
-  ggplot(aes(x = pd_outcome, y = pd_measure)) + geom_density_ridges(scale = .85, aes(fill = pd_measure), alpha = .4)
+  ggplot(aes(x = pd_outcome, y = pd_measure)) + geom_density_ridges(scale = .85, aes(fill = pd_measure), alpha = .4) + labs(title = "Pup Development Across Days",
+       x = "Number of Days",
+       y = "Development Point")
 
 pups_plot
 ```
