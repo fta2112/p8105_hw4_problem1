@@ -41,3 +41,6 @@ pups_plot = pups_data_tidy%>%
 
 pups_plot
 ```
+
+
+The pups_data dataset contained `r length(pups_data$litter_number)` observations across `r length(pups_data)` variables originally.  It was then tidied for our purposes in this problem.  The developmental points: ears, eyes, pivot, and walk were spread out for us to be able to evaluate the difference in time among the different points.  The resulting dataset had `r length(pups_data_tidy$litter_number)` obersvations across `r length(pups_data_tidy)` variables.  We made a ridge plot showing the differences in time among these developmental points. For most points, the number of days seems to vary, but it contained to a certain time frame.  It seeems for pd_eyes, the majority of pups develop eyes in the day 12-14 time frame, with very little developing before or after.  For the others, this time interval seems to be a little more spread out acorss time, and spread evenly through the litters. For example, a pretty even amount of pups seem to develop at pd_walk in the day 8-12 time frame.
